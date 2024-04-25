@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mağaza</title>
+    <link rel="stylesheet" href="/static/style.css">
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0-alpha.3/css/all.min.css">
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var categories = document.querySelectorAll(".product-categories a");
+        
+            categories.forEach(function (category) {
+                category.addEventListener("click", function (event) {
+                    event.preventDefault();
+        
+                    // Remove active class from all categories
+                    categories.forEach(function (cat) {
+                        cat.classList.remove("active");
+                    });
+        
+                    // Add active class to the clicked category
+                    this.classList.add("active");
+        
+                    // Hide all content sections except the target one
+                    var targetCategory = this.getAttribute("href").slice(1);
+                    var targetContentSection = document.getElementById(targetCategory + "-content");
+                    var allContentSections = document.querySelectorAll('.category-content');
+        
+                    allContentSections.forEach(function (section) {
+                        section.style.display = 'none';
+                    });
+        
+                    targetContentSection.style.display = 'block';
+        
+                    // Initialize Swiper for the target content section
+                    var swiper = new Swiper(targetContentSection, {
+                        slidesPerView: 4, // Number of slides per view
+                        spaceBetween: 10, // Space between slides
+                        navigation: {
+                            nextEl: '.swiper-button-next',
+                            prevEl: '.swiper-button-prev',
+                        },
+                    });
+                });
+            });
+        });
+        
+    </script>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const categoryButtons = document.querySelectorAll('.product-categories a');
+        
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', function(event) {
+                    event.preventDefault(); // Prevent default link behavior
+        
+                    // Remove 'active' class from all buttons
+                    categoryButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                        btn.style.backgroundColor = ''; // Reset background color to default
+                        btn.style.color = ''; // Reset text color to default
+                    });
+        
+                    // Add 'active' class to the clicked button
+                    this.classList.add('active');
+                    // Set the background color of the clicked button to red
+                    this.style.backgroundColor = 'red';
+                    // Set the text color of the clicked button to white
+                    this.style.color = 'white';
+                });
+            });
+        });
+        
+        
+          
+    </script>
+
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/hm-logo.png" alt="H&M Logo">
+        </div>
+        <div class="categories">
+            <ul>
+                <li><a href="#Kadın">Kadın</a></li>
+                <li><a href="#Erkek">Erkek</a></li>
+                <li><a href="#Divided">Divided</a></li>
+                <li><a href="#Bebek">Bebek</a></li>
+                <li><a href="#Çocuk">Çocuk</a></li>
+                <li><a href="#H&MHome">H&M Home</a></li>
+                <li><a href="#Spor">Spor</a></li>
+            </ul>
+        </div>
+        <div class="search">
+            <input type="text" placeholder="    Ürün Ara">
+        </div>
+        <div class="store-finder">
+            <a href="#">Mağaza Bul</a>
+        </div>
+    </header>
+
+    <div class="new-products">
+        <h2>Yeni Ürünler</h2>
+    </div>
+
+    <div class="product-categories">
+        <a href="#Kadın" class="active">Kadın</a>
+        <a href="#Erkek">Erkek</a>
+        <a href="#Divided">Divided</a>
+        <a href="#Bebek">Bebek</a>
+        <a href="#Çocuk">Çocuk</a>
+        <a href="#H&MHome">H&M Home</a>
+        <a href="#Spor">Spor</a>
+    </div>
+
+
+
+    <div id="Kadın-content" class="category-content">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"> <img src="images/shirt.jpg">
+                    <div class="caption">
+                        <h3>Keten Gömlek</h3>
+                        <p class="price">1129,00 TL</p>
+                    </div> 
+                </div>
+                <div class="swiper-slide"><img src="images/blouse.jpg">
+                    <div class="caption">
+                        <h3>Keten Bluz</h3>
+                        <p class="price">599.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"><img src="images/linen_blouse.jpg">
+                    <div class="caption">
+                        <h3>Keten Bluz</h3>
+                        <p class="price">549.99 TL</p>
+                    </div>
+                
+                </div>
+                <div class="swiper-slide"><img src="images/lace_dress.jpg">
+                    <div class="caption">
+                        <h3>Bağcık Detaylı Elbise</h3>
+                        <p class="price">649.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"> <img src="images/printed_dress.jpg">
+                    <div class="caption">
+                        <h3>Keten Karışımlı ve Baskılı Elbise</h3>
+                        <p class="price">1579 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"><img src="images/puff_sleeve_blouse.jpg">
+                    <div class="caption">
+                        <h3>Balon Kollu Bluz</h3>
+                        <p class="price">459.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"><img src="images/skirt.jpg">
+                    <div class="caption">
+                        <h3>Diz Boyu Etek</h3>
+                        <p class="price">459.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"><img src="images/off_shoulder_dress.jpg">
+                    <div class="caption">
+                        <h3>Tek Omuzlu Elbise</h3>
+                        <p class="price">1459.99 TL</p>
+                    </div>
+                
+                </div>
+                <div class="swiper-slide"><img src="images/oversize_shirt.jpg">
+                    <div class="caption">
+                        <h3>Oversize Gömlek</h3>
+                        <p class="price">519.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"><img src="images/belted_dress.jpg">
+                    <div class="caption">
+                        <h3>Kuşaklı Gömlek Elbise</h3>
+                        <p class="price">769.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"><img src="images/bermuda_short.jpg">
+                    <div class="caption">
+                        <h3>Kot Bermuda Şort</h3>
+                        <p class="price">829.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"><img src="images/bikini_top.jpg">
+                    <div class="caption">
+                        <h3>Bikini Üstü</h3>
+                        <p class="price">459.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"><img src="images/bikini_bottom.jpg">
+                    <div class="caption">
+                        <h3>Bikini Altı</h3>
+                        <p class="price">459.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"><img src="images/blazer_jacket.jpg">
+                    <div class="caption">
+                        <h3>Nakış İşlemeli Blazer</h3>
+                        <p class="price">2199.00 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"><img src="images/jean_short.jpg">
+                    <div class="caption">
+                        <h3>Skinny High Kot Şort</h3>
+                        <p class="price">549.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"><img src="images/jean_skirt.jpg">
+                    <div class="caption">
+                        <h3>Midi Kot Etek</h3>
+                        <p class="price">549.99 TL</p>
+                    </div>
+                 </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
+
+
+    <div id="Erkek-content" class="category-content" style="display: none;">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"> <img src="images/manshirt.jpg">
+                    <div class="caption">
+                        <h3> Delik Desenli Triko Gömlek</h3>
+                        <p class="price">929.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"><img src="images/man_linen_shirt.jpg">
+                    <div class="caption">
+                        <h3> Keten Gömlek</h3>
+                        <p class="price">999.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"><img src="images/linen_trousers.jpg">
+                    <div class="caption">
+                        <h3> Keten Karışımlı Pantalon</h3>
+                        <p class="price">1099.00 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"><img src="images/gabardin_jacket.jpg">
+                    <div class="caption">
+                        <h3> Gabardin Ceket</h3>
+                        <p class="price">1199.00 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"> <img src="images/shopper_bag.jpg">
+                    <div class="caption">
+                        <h3> Shopper Çanta</h3>
+                        <p class="price">619.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"><img src="images/tshirt.jpg">
+                    <div class="caption">
+                        <h3> Regular Fit Tişört</h3>
+                        <p class="price">249.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"><img src="images/jogger_trousers.jpg">
+                    <div class="caption">
+                        <h3> Jogger Pantalon</h3>
+                        <p class="price">929.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"><img src="images/worker_trouser.jpg">
+                    <div class="caption">
+                        <h3> Worker Pantalon</h3>
+                        <p class="price">2499.00 TL</p>
+                    </div></div>
+                <div class="swiper-slide"> <img src="images/denim_jacket.jpg">
+                    <div class="caption">
+                        <h3> Kot Ceket</h3>
+                        <p class="price">2999.00 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"> <img src="images/Loose_jean.jpg">
+                    <div class="caption">
+                        <h3> Bol Pantalon</h3>
+                        <p class="price">1549.00 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"> <img src="images/shorts.jpg">
+                    <div class="caption">
+                        <h3> Sweatshirt Şort</h3>
+                        <p class="price">459.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"> <img src="images/chino_shorts.webp">
+                    <div class="caption">
+                        <h3> Chino Şort</h3>
+                        <p class="price">619.99 TL</p>
+                    </div></div>
+                <div class="swiper-slide"> <img src="images/swimming_trunks.webp">
+                    <div class="caption">
+                        <h3> Desenli Şort Mayo</h3>
+                        <p class="price">549.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"> <img src="images/slim_jeans.jpg">
+                    <div class="caption">
+                        <h3> Slim Jean</h3>
+                        <p class="price">1249.00 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"> <img src="images/jersey_shirt.webp">
+                    <div class="caption">
+                        <h3> Jarse Gömlek</h3>
+                        <p class="price">879.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"> <img src="images/printed_tshirt.webp">
+                    <div class="caption">
+                        <h3> Baskılı Tişört</h3>
+                        <p class="price">459.99 TL</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
+    <div id="Divided-content" class="category-content" style="display: none;">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"> <img src="images/padded_jacket.webp">
+                    <div class="caption">
+                        <h3> Pamuklu Ceket</h3>
+                        <p class="price">879.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"><img src="images/shape_swimsuit.jpg">
+                    <div class="caption">
+                        <h3> Shape Mayo</h3>
+                        <p class="price">929.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"><img src="images/woman_tişört.webp">
+                    <div class="caption">
+                        <h3> Düz Tişört</h3>
+                        <p class="price">259.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"><img src="images/cardigan.jpg">
+                    <div class="caption">
+                        <h3> Tığ İşi Görünümlü Hırka</h3>
+                        <p class="price">1999.00 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"> <img src="images/oversize_woman_shirt.jpg">
+                    <div class="caption">
+                        <h3> Oversize Gömlek</h3>
+                        <p class="price">619.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"><img src="images/padded_t-shirt.jpg">
+                    <div class="caption">
+                        <h3> Tişört Elbise</h3>
+                        <p class="price">899.00 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"><img src="images/oversize_blazer.jpg">
+                    <div class="caption">
+                        <h3> Kruvaze Blazer</h3>
+                        <p class="price">1499.00 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"><img src="images/tank_top.jpg">
+                    <div class="caption">
+                        <h3> Kolsuz Bluz</h3>
+                        <p class="price">309.00 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"> <img src="images/cargo_pants.jpg">
+                    <div class="caption">
+                        <h3> Kargo Pantalon</h3>
+                        <p class="price">769.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"> <img src="images/regular_jeans.jpg">
+                    <div class="caption">
+                        <h3> Regular Panatalon</h3>
+                        <p class="price">929.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"> <img src="images/thin_blouse.jpg">
+                    <div class="caption">
+                        <h3> İnce Bluz</h3>
+                        <p class="price">169.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"> <img src="images/woven_jacket.jpg">
+                    <div class="caption">
+                        <h3> Dokuma Ceket</h3>
+                        <p class="price">1599.00 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"> <img src="images/bustier.jpg">
+                    <div class="caption">
+                        <h3> Büstiyer</h3>
+                        <p class="price">459.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"> <img src="images/one_shoulder_blouse.jpg">
+                    <div class="caption">
+                        <h3> Tek Omuzlu Üst</h3>
+                        <p class="price">379.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"> <img src="images/pilot_jacket.jpg">
+                    <div class="caption">
+                        <h3> Pilot Ceket</h3>
+                        <p class="price">1579.00 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"> <img src="images/low_jeans.jpg">
+                    <div class="caption">
+                        <h3>Düşük Bel Pantalon</h3>
+                        <p class="price">899.99 TL</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
+    <div id="Bebek-content" class="category-content" style="display: none;">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"> <img src="images/linen_set.jpg">
+                    <div class="caption">
+                        <h3> Keten Set</h3>
+                        <p class="price">549.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"><img src="images/dress.jpg">
+                    <div class="caption">
+                        <h3> Pamuklu Elbise</h3>
+                        <p class="price">309.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"><img src="images/sunglasses.jpg">
+                    <div class="caption">
+                        <h3> Güneş Gözlüğü</h3>
+                        <p class="price">419.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"><img src="images/tricot_set.jpg">
+                    <div class="caption">
+                        <h3> Triko Set</h3>
+                        <p class="price">769.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"> <img src="images/jersey_bodysuit.jpg">
+                    <div class="caption">
+                        <h3> Tulum</h3>
+                        <p class="price">419.00 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"><img src="images/pull_pants.jpg">
+                    <div class="caption">
+                        <h3> Pull-on Pantalon</h3>
+                        <p class="price">309.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"><img src="images/jogger_pants.jpg">
+                    <div class="caption">
+                        <h3>Jogger Pantalon</h3>
+                        <p class="price">309.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"><img src="images/baby_shirt.jpg">
+                    <div class="caption">
+                        <h3>Keten Gömlek</h3>
+                        <p class="price">259.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"> <img src="images/baby_shorts.jpg">
+                    <div class="caption">
+                        <h3>Pamuklu Şort</h3>
+                        <p class="price">309.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"> <img src="images/set_shorts.jpg">
+                    <div class="caption">
+                        <h3>Üst Şort Set</h3>
+                        <p class="price">309.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"> <img src="images/top_set.jpg">
+                    <div class="caption">
+                        <h3>Alt Üst Set</h3>
+                        <p class="price">309.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"> <img src="images/jersey_jumpsuit.jpg">
+                    <div class="caption">
+                        <h3>Jarse Tulum</h3>
+                        <p class="price">309.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"> <img src="images/sandals.jpg">
+                    <div class="caption">
+                        <h3>Sandalet</h3>
+                        <p class="price">619.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"> <img src="images/overalls_pajamas.jpg">
+                    <div class="caption">
+                        <h3> Üçlü Tulum Pijama</h3>
+                        <p class="price">719.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"> <img src="images/overalls_pajamas_cotton.jpg">
+                    <div class="caption">
+                        <h3>Pamuklu Tulum Pijama</h3>
+                        <p class="price">249.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"> <img src="images/sandals2.jpg">
+                    <div class="caption">
+                        <h3>Pamuklu Sandalet</h3>
+                        <p class="price">459.99 TL</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
+    <div id="Çocuk-content" class="category-content" style="display: none;">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"> <img src="images/sweatshirt_set.jpg">
+                    <div class="caption">
+                        <h3>Sweatshirt Set</h3>
+                        <p class="price">439.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"><img src="images/motif_tshirt.jpg">
+                    <div class="caption">
+                        <h3>Hayvan Motifli Tişört</h3>
+                        <p class="price">239.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"><img src="images/animal_tshirt.jpg">
+                    <div class="caption">
+                        <h3>Hayvan Motifli Tişört</h3>
+                        <p class="price">239.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"><img src="images/animal_tshirt2.jpg">
+                    <div class="caption">
+                        <h3>Hayvan Motifli Siyah Tişört</h3>
+                        <p class="price">239.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"> <img src="images/collarless_tshirt.jpg">
+                    <div class="caption">
+                        <h3>Sıfır YakaTişört</h3>
+                        <p class="price">239.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"><img src="images/animal_tshirt3.jpg">
+                    <div class="caption">
+                        <h3>Hayvan Motifli Tişört</h3>
+                        <p class="price">239.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"><img src="images/strappy_sandals.jpg">
+                    <div class="caption">
+                        <h3>Atkılı Sandalet</h3>
+                        <p class="price">619.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"><img src="images/cotton_tişört.jpg">
+                    <div class="caption">
+                        <h3>Pamuklu Tişört</h3>
+                        <p class="price">299.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"> <img src="images/linen_dress.jpg">
+                    <div class="caption">
+                        <h3>Keten Elbise</h3>
+                        <p class="price">619.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"> <img src="images/tişört4.jpg">
+                    <div class="caption">
+                        <h3>Motifli Tişört</h3>
+                        <p class="price">299.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"> <img src="images/animal_tshirt4.jpg">
+                    <div class="caption">
+                        <h3>Hayvan Motifli Tişört</h3>
+                        <p class="price">239.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"> <img src="images/shawl.jpg">
+                    <div class="caption">
+                        <h3>Şal</h3>
+                        <p class="price">289.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"> <img src="images/striped_shirt.jpg">
+                    <div class="caption">
+                        <h3>Çizgili Gömlek</h3>
+                        <p class="price">619.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"> <img src="images/hat.jpg">
+                    <div class="caption">
+                        <h3>Şapka</h3>
+                        <p class="price">359.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"> <img src="images/sunglasses2.jpg">
+                    <div class="caption">
+                        <h3>Gözlük</h3>
+                        <p class="price">419.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"> <img src="images/socks.jpg">
+                    <div class="caption">
+                        <h3> Beşli Çorap</h3>
+                        <p class="price">159.99 TL</p>
+                    </div></div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
+    <div id="H&MHome-content" class="category-content" style="display: none;">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"> <img src="images/towel.jpg">
+                    <div class="caption">
+                        <h3>Panço Havlu</h3>
+                        <p class="price">619.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"><img src="images/pillow.jpg">
+                    <div class="caption">
+                        <h3>Yastık</h3>
+                        <p class="price">309.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"><img src="images/curtain.jpg">
+                    <div class="caption">
+                        <h3>Perde</h3>
+                        <p class="price">319.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"><img src="images/vase.jpg">
+                    <div class="caption">
+                        <h3>Saksı</h3>
+                        <p class="price">769.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"> <img src="images/wide_curtain.jpg">
+                    <div class="caption">
+                        <h3>Geniş Perde</h3>
+                        <p class="price">619.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"><img src="images/stoneware.jpg">
+                    <div class="caption">
+                        <h3>Vazo</h3>
+                        <p class="price">1099.00 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"><img src="images/lyocell.jpg">
+                    <div class="caption">
+                        <h3>Tekli Lyocell Perde</h3>
+                        <p class="price">1999.00 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"><img src="images/lyocell_1.jpg">
+                    <div class="caption">
+                        <h3>İkili Lyocell Perde</h3>
+                        <p class="price">3299.00 TL</p>
+                    </div></div>
+                <div class="swiper-slide"> <img src="images/beach_bag.jpg">
+                    <div class="caption">
+                        <h3>Plaj Çantası</h3>
+                        <p class="price">459.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"> <img src="images/stoneware_vase.jpg">
+                    <div class="caption">
+                        <h3> Stoneware Vazo</h3>
+                        <p class="price">619.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"> <img src="images/striped_towel.jpg">
+                    <div class="caption">
+                        <h3>Desenli Havlu</h3>
+                        <p class="price">459.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"> <img src="images/strawberry_towel.jpg">
+                    <div class="caption">
+                        <h3>Çilekli Havlu</h3>
+                        <p class="price">619.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"> <img src="images/toy.jpg">
+                    <div class="caption">
+                        <h3>Yumuşak Oyuncak</h3>
+                        <p class="price">459.99 TL</p>
+                    </div></div>
+                <div class="swiper-slide"> <img src="images/box.jpg">
+                    <div class="caption">
+                        <h3> Jüt Kutu</h3>
+                        <p class="price">189.99 TL</p>
+                    </div></div>
+                <div class="swiper-slide"> <img src="images/candlestick.jpg">
+                    <div class="caption">
+                        <h3>Şişeye Takılan Şamdan</h3>
+                        <p class="price">159.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"> <img src="images/soap_dish.jpg">
+                    <div class="caption">
+                        <h3>Sıvı Sabunluk</h3>
+                        <p class="price">399.99 TL</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
+
+    <div id="Spor-content" class="category-content" style="display: none;">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"> <img src="images/sports_bikini_top.jpg">
+                    <div class="caption">
+                        <h3>Bikini Üstü</h3>
+                        <p class="price">619.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"><img src="images/sport_bikini_bottom.jpg">
+                    <div class="caption">
+                        <h3>Spor Bikini Altı</h3>
+                        <p class="price">489.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"><img src="images/green_bikini_bottom.jpg">
+                    <div class="caption">
+                        <h3>Bikini Altı</h3>
+                        <p class="price">489.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"><img src="images/shortie.jpg">
+                    <div class="caption">
+                        <h3>Shortie Bikini Altı</h3>
+                        <p class="price">619.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"> <img src="images/sport_glasses.jpg">
+                    <div class="caption">
+                        <h3>Spor Güneş Gözlüğü</h3>
+                        <p class="price">1199.00 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"><img src="images/swimsuit.jpg">
+                    <div class="caption">
+                        <h3>Yüzücü Mayosu</h3>
+                        <p class="price">929.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"><img src="images/bikini_bottom2.jpg">
+                    <div class="caption">
+                        <h3>Spor Bikini Altı</h3>
+                        <p class="price">489.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"><img src="images/sports_tights.jpg">
+                    <div class="caption">
+                        <h3>Dikişsiz Spor Taytı</h3>
+                        <p class="price">619.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"> <img src="images/sports_tights_black.jpg">
+                    <div class="caption">
+                        <h3> Kısa Spor Taytı</h3>
+                        <p class="price">619.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"> <img src="images/DryMove.jpg">
+                    <div class="caption">
+                        <h3> Kısa Spor Taytı</h3>
+                        <p class="price">309.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"> <img src="images/pink_tights.jpg">
+                    <div class="caption">
+                        <h3> Dikişsiz Spor Taytı</h3>
+                        <p class="price">309.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"> <img src="images/tennis_skirt.jpg">
+                    <div class="caption">
+                        <h3> Kısa Spor Üstü</h3>
+                        <p class="price">329.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"> <img src="images/sleeveless_top.jpg">
+                    <div class="caption">
+                        <h3> Kolsuz Spor Üstü</h3>
+                        <p class="price">459.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"> <img src="images/sport_crop.jpg">
+                    <div class="caption">
+                        <h3> Kısa Spor Üstü</h3>
+                        <p class="price">329.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"> <img src="images/run_hat.jpg">
+                    <div class="caption">
+                        <h3> Koşu Şapkası</h3>
+                        <p class="price">489.99 TL</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"> <img src="images/backpack.jpg">
+                    <div class="caption">
+                        <h3> Yürüyüş Sırt Çantası</h3>
+                        <p class="price">2 799.00 TL</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
+
+
+   
+
+
+
+
+
+
+
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 4,
+            spaceBetween: 10,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            on: {
+                slideChange: function () {
+                    // Her slayt değiştiğinde bu fonksiyon çalışır
+                    // Yeni slaytı burada işleyebiliriz
+                    console.log('Yeni slayt: ', this.activeIndex);
+                },
+            },
+            breakpoints: {
+                769: {
+                    slidesPerView: 4,
+                    slidesPerGroup: 4,
+                },
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    </script>
+</body>
+
+</html>

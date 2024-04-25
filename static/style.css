@@ -1,0 +1,136 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    height: 100px;
+   
+}
+
+.logo {
+    margin-top: -40px;
+    margin-left: 700px; /* Logoyu sağa kaydır */
+}
+
+.logo img {
+    width: 80px; /* İlgili logo boyutu için uygun bir değer belirleyin */
+}
+
+.categories ul {
+    list-style-type: none;
+    margin-left: -640px;
+    display: flex; /* Butonları yatayda sıralamak için flex kullanın */
+}
+
+.categories ul li {
+    margin-right: 20px;
+    margin-top: 80px;
+}
+
+.categories ul li a {
+    text-decoration: none;
+    color: #000;
+    padding: 8px 12px;
+    border-radius: 5px;
+   
+    
+}
+
+.categories ul li a:hover {
+   text-decoration: underline;
+}
+
+
+
+.search input[type="text"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    margin-top: 70px;
+}
+
+
+.store-finder {
+    margin-top: -60px; /* Mağaza Bul yazısını yukarı taşı */
+   
+}
+
+.store-finder a {
+    text-decoration: none;
+    color: #000;
+    margin-left: -1490px; /* Mağaza Bul yazısını sola kaydır */
+}
+
+.new-products {
+    margin-top: 20px; /* Yeni ürünler başlığını biraz aşağı al */
+    margin-left: 300px;
+}
+.new-products h2 {
+    font-size: 18px; /* Yeni ürünler başlığının yazı boyutunu ayarla */
+    
+}
+
+.product-categories {
+    margin-top: 20px;
+    margin-left: 300px;
+}
+
+.product-categories a {
+    text-decoration: none;
+    color: #000;
+    padding: 8px 12px;
+    border-radius: 20px;
+    margin-right: 10px;
+    background-color: #fffdfd; /* Butonun varsayılan iç rengi */
+    border: 1px solid #000; /* Kenar rengi */
+}
+
+
+
+.product-categories a:active {
+    background-color: red; /* Buton tıklandığında rengini koru */
+    color: #fff;
+   
+}
+
+
+
+
+.category-content .swiper-slide img {
+    max-width: calc(75% - 10px); /* Her slaytta dört resim gösterilecek şekilde ayarlayın */
+    margin: 25px; /* Resimler arasındaki boşluğu azaltmak için margin ekleyin */
+    height: auto;
+    margin-bottom: 60px;
+}
+
+
+.swiper-slide {
+    position: relative;
+}
+
+.caption {
+    position: absolute;
+    bottom: 0px;
+    left: 25px;
+    width: 50%;
+    font-size: 13px;
+    color: #212020;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.caption h3,
+.caption p {
+    margin:0;
+}
